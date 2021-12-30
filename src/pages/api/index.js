@@ -133,13 +133,10 @@ const resolvers = {
   },
   Mutation: {
     async createUser(parent, args, context) {
-      const user = await loginChecker(context);
-      if (!user) throw new Error("Not Authorized");
-      if (user.role !== "ADMIN") throw new Error("You are not admin");
       const { name, email, password, role } = await args;
       const hashedPassword = await bcrypt.hash(password, 10);
       const query = `INSERT INTO users (name, email, password, role) VALUES ('${name}', '${email}', '${hashedPassword}', '${role}')`;
-      const newUser = await db.query(query);
+      await db.query(query);
       return { message: "User created" };
     },
     async updateUser(parent, args, context) {
