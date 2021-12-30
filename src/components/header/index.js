@@ -26,7 +26,7 @@ const index = ({ user }) => {
           <div
             className={`menu ${
               isOpen ? "isactive" : null
-            }}`}
+            }`}
             id="menu"
           >
             <ul className="menuinner">
