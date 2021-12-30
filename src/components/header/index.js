@@ -1,71 +1,70 @@
 /* eslint-disable */
 import React, { useState } from "react";
-import Styles from "./Header.module.css";
 
 const index = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className={Styles.navbar}>
-      <div className={Styles.container}>
-        <section className={Styles.wrapper}>
-          <a href="/" className={Styles.brand}>
+    <nav className="navbar">
+      <div className="container">
+        <section className="wrapper">
+          <a href="/" className="brand">
             ProjectX
           </a>
           <button
             type="button"
-            className={`${Styles.burger} ${
-              isOpen ? Styles.burger_isactive : null
+            className={`burger ${
+              isOpen ? "isactive" : null
             }`}
             id="burger"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <span className={Styles.burgerline}></span>
-            <span className={Styles.burgerline}></span>
-            <span className={Styles.burgerline}></span>
-            <span className={Styles.burgerline}></span>
+            <span className="burgerline"></span>
+            <span className="burgerline"></span>
+            <span className="burgerline"></span>
+            <span className="burgerline"></span>
           </button>
           <div
-            className={`${Styles.menu} ${
-              isOpen ? Styles.menu_isactive : null
+            className={`menu ${
+              isOpen ? "isactive" : null
             }}`}
             id="menu"
           >
-            <ul className={Styles.menuinner}>
-              <li className={Styles.menuitem}>
-                <a href="/dashboard" className={Styles.menulink}>
+            <ul className="menuinner">
+              <li className="menuitem">
+                <a href="/dashboard" className="menulink">
                   Home
                 </a>
               </li>
               {user.role === "ADMIN" ? (
                 <>
-                  <li className={Styles.menuitem}>
+                  <li className="menuitem">
                     <a
                       href="/dashboard/assign-tasks"
-                      className={Styles.menulink}
+                      className="menulink"
                     >
                       Assign Tasks
                     </a>
                   </li>
-                  <li className={Styles.menuitem}>
+                  <li className="menuitem">
                     <a
                       href="/dashboard/create-user"
-                      className={Styles.menulink}
+                      className="menulink"
                     >
                       Create User
                     </a>
                   </li>
-                  <li className={Styles.menuitem}>
+                  <li className="menuitem">
                     <a
                       href="/dashboard/take-attendance"
-                      className={Styles.menulink}
+                      className="menulink"
                     >
                       Attendance
                     </a>
                   </li>
-                  <li className={Styles.menuitem}>
+                  <li className="menuitem">
                     <a
                       href="/dashboard/users"
-                      className={Styles.menulink}
+                      className="menulink"
                     >
                       Users
                     </a>
@@ -73,16 +72,16 @@ const index = ({ user }) => {
                 </>
               ) : (
                 <>
-                  <li className={Styles.menuitem}>
-                    <a href="/dashboard/attendance" className={Styles.menulink}>
+                  <li className="menuitem">
+                    <a href="/dashboard/attendance" className="menulink">
                       Attendance
                     </a>
                   </li>
                 </>
               )}
-              <li className={Styles.menuitem}>
+              <li className="menuitem">
                 ({user?.name}){" "}
-                <a href="/logout" className={Styles.menulink}>
+                <a href="/logout" className="menulink">
                   Logout
                 </a>
               </li>
