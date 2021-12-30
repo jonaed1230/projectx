@@ -67,7 +67,7 @@ const index = ({ data: respData, users, tasks }) => {
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:3000/api", {
+  const res = await fetch("https://jonaed.live/api", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -77,7 +77,7 @@ export async function getServerSideProps(context) {
   });
   const data = await res.json();
   if (data?.data?.me.role === "ADMIN") {
-    const res2 = await fetch("http://localhost:3000/api", {
+    const res2 = await fetch("https://jonaed.live/api", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -90,7 +90,7 @@ export async function getServerSideProps(context) {
     const data2 = await res2.json();
     return { props: { data, users: data2 } };
   }
-  const res2 = await fetch("http://localhost:3000/api", {
+  const res2 = await fetch("https://jonaed.live/api", {
     method: "POST",
     headers: {
       "Content-type": "application/json",

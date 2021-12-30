@@ -4,7 +4,7 @@ import { getCookie } from "cookies-next";
 
 const logout = () => {
   const router = useRouter();
-  fetch("http://localhost:3000/api", {
+  fetch("https://jonaed.live/api", {
     method: "POST",
     headers: {
       "Content-type": "application/json",

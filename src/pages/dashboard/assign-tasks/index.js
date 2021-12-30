@@ -22,7 +22,7 @@ const index = ({ data: respData }) => {
       title: title.value,
       description: description.value,
     };
-    fetch("http://localhost:3000/api", {
+    fetch("https://jonaed.live/api", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const index = ({ data: respData }) => {
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:3000/api", {
+  const res = await fetch("https://jonaed.live/api", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
