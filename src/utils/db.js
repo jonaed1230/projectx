@@ -2,7 +2,7 @@ const mysql = require('mysql2/promise');
 
 async function query(sql, params) {
   const connection = await mysql.createConnection({
-    host: '194.233.81.193',
+    host: '168.119.4.47',
     user: 'jonaedbd_jonaedbd',
     password: 'Someone@1234',
     database: 'jonaedbd_university_project',
